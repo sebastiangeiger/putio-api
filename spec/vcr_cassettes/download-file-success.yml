@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.put.io/v2/files/list?oauth_token=SU8E03NO&parent_id=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 29 Nov 2012 09:17:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2968'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Set-Cookie:
+      - session="VVxHahbH3RbcbQdY3n9Cbdn/gFk=?_id=UydceGM5XHgxYVx4ZmNUclx4ZTNceGQzXHgxZFx4ZTljPVx4ZjFceGIzXHg4MyxceDA1JwpwMQou";
+        Path=/; HttpOnly
+      Srv:
+      - api
+    body:
+      encoding: US-ASCII
+      string: ! "{\n  \"files\": [\n    {\n      \"is_shared\": false,\n      \"name\":
+        \"Uploading to Piratebay- The Complete Guide.txt\",\n      \"screenshot\":
+        null,\n      \"created_at\": \"2012-11-28T19:54:33\",\n      \"opensubtitles_hash\":
+        null,\n      \"parent_id\": 0,\n      \"is_mp4_available\": false,\n      \"content_type\":
+        \"text/plain\",\n      \"icon\": \"https://put.io/images/file_types/text.png\",\n
+        \     \"id\": 49524094,\n      \"size\": 487\n    },\n    {\n      \"is_shared\":
+        false,\n      \"name\": \"Futurama - Season 7 (XviD)\",\n      \"screenshot\":
+        null,\n      \"created_at\": \"2012-11-28T12:49:24\",\n      \"opensubtitles_hash\":
+        null,\n      \"parent_id\": 0,\n      \"is_mp4_available\": false,\n      \"content_type\":
+        \"application/x-directory\",\n      \"icon\": \"https://put.io/images/file_types/folder.png\",\n
+        \     \"id\": 49493953,\n      \"size\": 2496004554\n    },\n    {\n      \"is_shared\":
+        false,\n      \"name\": \"The.Walking.Dead.S03E07.720p.HDTV.x264-EVOLVE.mkv\",\n
+        \     \"screenshot\": \"https://put.io/screenshots/llxlYWdjYl%2BViVpiVmdjZmGSXmSIW2VYl5FlYmSJZllZkldkXZJhYg.jpg\",\n
+        \     \"created_at\": \"2012-11-27T07:50:43\",\n      \"opensubtitles_hash\":
+        \"01c196ef81d986e9\",\n      \"parent_id\": 0,\n      \"is_mp4_available\":
+        true,\n      \"content_type\": \"video/x-matroska\",\n      \"icon\": \"https://put.io/thumbnails/llxlYWdjYl%2BViVpiVmdjZmGSXmSIW2VYl5FlYmSJZllZkldkXZJhYg.jpg\",\n
+        \     \"id\": 49375733,\n      \"size\": 1282926154\n    },\n    {\n      \"is_shared\":
+        false,\n      \"name\": \"Hell.on.Wheels.S01E08.720p.HDTV.x264-COMPULSiON\",\n
+        \     \"screenshot\": null,\n      \"created_at\": \"2012-11-26T17:27:03\",\n
+        \     \"opensubtitles_hash\": null,\n      \"parent_id\": 0,\n      \"is_mp4_available\":
+        false,\n      \"content_type\": \"application/x-directory\",\n      \"icon\":
+        \"https://put.io/images/file_types/folder.png\",\n      \"id\": 49330387,\n
+        \     \"size\": 1402166923\n    },\n    {\n      \"is_shared\": false,\n      \"name\":
+        \"Hell.On.Wheels.S01E06.720p.HDTV.X264-COMPULSiON\",\n      \"screenshot\":
+        null,\n      \"created_at\": \"2012-11-24T21:55:39\",\n      \"opensubtitles_hash\":
+        null,\n      \"parent_id\": 0,\n      \"is_mp4_available\": false,\n      \"content_type\":
+        \"application/x-directory\",\n      \"icon\": \"https://put.io/images/file_types/folder.png\",\n
+        \     \"id\": 49126650,\n      \"size\": 902376892\n    },\n    {\n      \"is_shared\":
+        false,\n      \"name\": \"Hell.On.Wheels.S01E07.720p.HDTV.x264-IMMERSE\",\n
+        \     \"screenshot\": null,\n      \"created_at\": \"2012-11-24T15:22:00\",\n
+        \     \"opensubtitles_hash\": null,\n      \"parent_id\": 0,\n      \"is_mp4_available\":
+        false,\n      \"content_type\": \"application/x-directory\",\n      \"icon\":
+        \"https://put.io/images/file_types/folder.png\",\n      \"id\": 49082868,\n
+        \     \"size\": 921817103\n    }\n  ],\n  \"status\": \"OK\",\n  \"parent\":
+        {\n    \"is_shared\": false,\n    \"name\": \"Your Files\",\n    \"screenshot\":
+        null,\n    \"created_at\": \"2012-10-24T07:04:56\",\n    \"parent_id\": null,\n
+        \   \"is_mp4_available\": false,\n    \"content_type\": \"application/x-directory\",\n
+        \   \"icon\": \"https://put.io/images/file_types/folder.png\",\n    \"id\":
+        0,\n    \"size\": 7005292113\n  }\n}"
+    http_version: 
+  recorded_at: Thu, 29 Nov 2012 09:17:48 GMT
+- request:
+    method: get
+    uri: https://api.put.io/v2/files/49524094/download?oauth_token=SU8E03NO
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: FOUND
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 29 Nov 2012 09:17:49 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '425'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Location:
+      - https://frc.put.io/download/49524094?tunnel=1&token=7e69148e39f811e2a1e900248126f0ef&storage=s10&attachment=1
+      Set-Cookie:
+      - session="VVxHahbH3RbcbQdY3n9Cbdn/gFk=?_id=UydceGM5XHgxYVx4ZmNUclx4ZTNceGQzXHgxZFx4ZTljPVx4ZjFceGIzXHg4MyxceDA1JwpwMQou";
+        Path=/; HttpOnly
+      Srv:
+      - api
+    body:
+      encoding: US-ASCII
+      string: ! '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+        <title>Redirecting...</title>
+
+        <h1>Redirecting...</h1>
+
+        <p>You should be redirected automatically to target URL: <a href="https://frc.put.io/download/49524094?tunnel=1&token=7e69148e39f811e2a1e900248126f0ef&storage=s10&attachment=1">https://frc.put.io/download/49524094?tunnel=1&token=7e69148e39f811e2a1e900248126f0ef&storage=s10&attachment=1</a>.  If
+        not click the link.'
+    http_version: 
+  recorded_at: Thu, 29 Nov 2012 09:17:49 GMT
+recorded_with: VCR 2.3.0

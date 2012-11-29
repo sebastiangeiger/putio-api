@@ -1,0 +1,88 @@
+#!/usr/bin/env ruby
+
+lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
+$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
+
+begin
+  require 'putio-api'
+  require 'gli'
+rescue LoadError
+  require 'rubygems'
+  require 'putio-api'
+  require 'gli'
+end
+
+include GLI::App
+
+program_desc 'A put.io command line client'
+
+version PutioApi::VERSION
+
+desc 'Show which configuration options are set'
+arg_name 'action'
+command "config" do |c|
+  c.default_value 'show-all'
+  c.action do |global_options,options,args|
+    if args == ['show-all']
+      puts @config
+    elsif args == ['init']
+      PutioApi::Configuration.init_config_file_in(ENV["HOME"])
+      puts "Initialized file!"
+    else
+      raise "I don't know this argument"
+    end
+  end
+end
+
+desc 'List files in a path'
+arg_name 'path'
+command :list do |c|
+  c.action do |global_options,options,args|
+    args = ['/'] if args.empty?
+    args.each do |arg|
+      puts "#{arg}:" if args.size > 1
+      files = PutioApi::Interactors::ListFilesRequest.new(@config).list(arg)
+      puts files.map(&:name).join("\r\n")
+    end
+  end
+end
+
+desc 'Download a file'
+arg_name 'path'
+command :download do |c|
+  c.action do |global_options,options,args|
+    args.each do |arg|
+      print "#{arg}:" if args.size > 1
+      location = PutioApi::Interactors::DownloadFileRequest.new(@config).list(arg)
+      puts "Downloaded to #{location}"
+    end
+  end
+end
+
+pre do |global,command,options,args|
+  # Pre logic here
+  # Return true to proceed; false to abourt and not call the
+  # chosen command
+  # Use skips_pre before a command to skip this block
+  # on that command only
+  begin
+    @config = PutioApi::Configuration.build(ENV["HOME"])
+  rescue Errno::ENOENT => e
+    raise "Please run `putio config init`" unless command.name == :config and args == ["init"]
+  end
+  true
+end
+
+post do |global,command,options,args|
+  # Post logic here
+  # Use skips_post before a command to skip this
+  # block on that command only
+end
+
+on_error do |exception|
+  # Error logic here
+  # return false to skip default error handling
+  true
+end
+
+exit run(ARGV)
