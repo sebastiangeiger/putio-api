@@ -7,4 +7,9 @@ Feature: Listing Files and Directories
   Scenario: Listing files in root
     Given a valid configuration file exists
     When I run `putio list /`
-    Then the output should contain "The.Walking.Dead.S03E07.720p.HDTV.x264-EVOLVE.mkv"
+    Then the output should contain "Modern.Family.S04E06.720p.HDTV.X264-DIMENSION.mkv"
+
+  Scenario: Listing files in folder with space
+    Given a valid configuration file exists
+    When I run `putio list "Modern.Family.S04E07.720p.HDTV.X264-DIMENSION [PublicHD]"`
+    Then the output should contain "Modern.Family.S04E07.720p.HDTV.X264-DIMENSION.mkv"
