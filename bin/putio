@@ -47,14 +47,13 @@ command :list do |c|
   end
 end
 
-desc 'Download a file'
+desc 'Get the url to download a file'
 arg_name 'path'
-command :download do |c|
+command :url do |c|
   c.action do |global_options,options,args|
     args.each do |arg|
-      print "#{arg}:" if args.size > 1
-      location = PutioApi::Interactors::DownloadFileRequest.new(@config).list(arg)
-      puts "Downloaded to #{location}"
+      puts "#{arg}:" if args.size > 1
+      puts PutioApi::Interactors::DownloadFileRequest.new(@config).get_url(arg)
     end
   end
 end
