@@ -8,12 +8,10 @@ Gem::Specification.new do |gem|
   gem.version       = PutioApi::VERSION
   gem.authors       = ["Sebastian Geiger"]
   gem.email         = ["sebastian.geiger@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = %q{Library/CLI to interact with put.io}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
-  gem.executables   << 'bin/putio'
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
   gem.add_dependency('gli')
