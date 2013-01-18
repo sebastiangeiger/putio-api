@@ -1,16 +1,7 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby-1.9.3-p194@putio-api
 
-lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
-$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
-
-begin
-  require 'putio-api'
-  require 'gli'
-rescue LoadError
-  require 'rubygems'
-  require 'putio-api'
-  require 'gli'
-end
+require 'gli'
+require 'putio-api'
 
 include GLI::App
 
